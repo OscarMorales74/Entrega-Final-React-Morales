@@ -1,0 +1,208 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILOS DEL NAV */
+.nav {
+  position: sticky;
+  display: flex;
+  top: 0;
+  z-index: 2;
+  justify-content: space-between;/*separa horizontalmente la imagen y el nav*/
+  align-items: center;
+  height: 80px;
+  background: linear-gradient(to bottom, #ffffff,  #e8e7e7, #c1c1c1,#8f8f8f); }
+.navLogo {
+  height: 60px;
+  display: flex;
+  margin-left: 2rem; }
+.icoCarrito {
+  height: 50px;
+  padding-left: 2rem;
+  padding-right: 1rem; }
+.contadorCarrito {
+  display: flex;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.nav_list {/* prop el nav */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 80%;
+  right: 2%;
+  top: 0;        
+  padding-top: 0;
+  text-align: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  margin-right: 0.2rem;
+  background-color: transparent;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.nav_link {
+  margin: 0 0.4rem;
+  text-decoration: none;
+}
+
+/* ESTILOS DEL DETALLE DE PRODUCTOS */
+.containerProd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  height: 40rem;
+  margin: 3rem;
+  padding: 1rem;
+  border: solid 2px #000000;
+  border-radius: 10px; }
+.containerProd .detalleImg {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 40%;
+  height: 80%;
+  object-fit: cover;
+  margin: 1rem; }
+.containerProd .content {
+  display: block;
+  position: relative;
+  top: 10%;
+  left: 20%;
+  width: 50%; }
+.containerProd .content .tituloDetalle {
+  display: block;
+  top: 5rem;
+  height: 30%;
+  font-size: 3rem; }
+.containerProd .content .descrDetalle {
+  display: block;
+  top: 5rem;
+  font-size: 2rem;
+  height: 70%;
+  max-height: 50%;
+  overflow: hidden;
+  overflow-wrap: break-word; }
+.counter {
+  position: relative;
+  top: 5%;
+  left: 20%; }
+.btnPlusminusCarrito {
+  position: relative;
+  top: 7rem;
+  left: 1rem;
+  width: 30px;
+  height: 30px;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2eed08; }
+.cantAagregar {
+  position: relative;
+  top: 7rem;
+  left: 1rem;
+  font-size: 2rem;
+  margin: 2rem;
+  font-weight: bold; }
+.agregarAlCarrito {
+  position: relative;
+  top: 9rem;
+  left: -1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2eed08; }
+.btnTerminarCompra {
+  position: relative;
+  top: 9rem;
+  left: 0;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2eed08; }
+
+/* ESTILOS DE CONTENEDOR DE PRODUCTOS EN ITEMLISTCONTAINER */
+/* DE LA CARD (PROD) EN ITEM*/
+/* DE LA IMAGEN DENTRO DA LA CARD (PRODIMG)EN ITEM */
+/* DE LOS TEXTOS DENTRO DEL PRODUCTO */
+.contenedorProd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-items: stretch;
+  gap: 0.6rem;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffffe9, #c3c3c3e6, #cbcbcbf2, #f8f8f8f2);}
+
+.contenedorProd .prod {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 15rem;
+  height: 25rem;
+  margin: 3rem;background: linear-gradient(to bottom, #ffffffe9, #c3c3c3e6, #cbcbcbf2, #f8f8f8f2);
+  transition: 0.3s ease all;
+  border-radius: 10px;
+  box-shadow: 0 0 2px black; }
+  .contenedorProd .prod:hover {
+    scale: 1.02;
+    background: white;
+    box-shadow: 0 1px 5px black;  }
+
+.contenedorProd .prod .prodImg {
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  object-fit: cover;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;}
+
+.contenedorProd .prod .tituloProdList {
+  position: absolute;
+  text-align: start;
+  top: 60%;
+  left: 1.5rem;
+  font-size: 2.0rem;
+  color: #000;
+  overflow: hidden;
+  overflow-wrap: break-word;}
+
+.contenedorProd .prod .descripcionProdList {
+  text-align: start;
+  position: absolute;
+  top: 72%;
+  left: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: lighter;
+  height: 2rem;
+  width: 80%;
+  color: #000000;
+  overflow: hidden; }
+
+  .contenedorProd .prod .precioProdList {
+    font-weight: bold;
+    text-align: right;
+    position: absolute;
+    bottom: 4px;
+    right: 1rem;
+    padding-right: 0.4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    width: 40%;
+    color: #000000; }
