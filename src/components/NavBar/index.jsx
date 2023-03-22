@@ -12,12 +12,6 @@ const NavBar = () => {
                     <NavLink className="navLogo" to='/'><img src={Logo} alt="logo"/></NavLink>
                     
                 </div>
-                    <div>
-                        <NavLink className="icoCarrito" to='/cart'>
-                            <IconoCarrito />
-                        </NavLink>
-                    </div>
-                    <span className="contadorCarrito">2</span>
                 <ul className="nav_list">
                     <li>
                         <NavLink className="nav_link" to='/'>INICIO</NavLink>
@@ -29,6 +23,9 @@ const NavBar = () => {
                         <NavLink className="nav_link" to='/categoria/figuras'>FIGURAS</NavLink>
                     </li>
                 </ul>
+                    <div>
+                        <NavLink to='/cart'> <IconoCarrito /> </NavLink>
+                    </div>
             </nav>
         </div>
     );

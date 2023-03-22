@@ -18,15 +18,25 @@
   height: 60px;
   display: flex;
   margin-left: 2rem; }
+/* ICONO DEL CARRITO EN NAV */
+.conjCarrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 2rem;
+  border: solid 1px #cacaca;
+  border-radius: 5px; }  
 .icoCarrito {
-  height: 50px;
-  padding-left: 2rem;
-  padding-right: 1rem; }
+  height: 30px;
+  line-height: 30px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 1rem;}
 .contadorCarrito {
   display: flex;
-  font-size: 1.2rem;
-  line-height: 2rem;
-}
+  font-size: 1.4rem;
+  line-height: 30px;
+  margin-right: 1rem;}
 .nav_list {/* prop el nav */
   display: flex;
   flex-direction: row;
@@ -61,8 +71,9 @@
   height: 40rem;
   margin: 3rem;
   padding: 1rem;
-  border: solid 2px #000000;
-  border-radius: 10px; }
+  border: solid 2px #403e3ed6;
+  border-radius: 10px;
+  background-color: #e5ded54a; }
 .containerProd .detalleImg {
   position: absolute;
   top: 1rem;
@@ -156,11 +167,11 @@
   margin: 3rem;background: linear-gradient(to bottom, #ffffffe9, #c3c3c3e6, #cbcbcbf2, #f8f8f8f2);
   transition: 0.3s ease all;
   border-radius: 10px;
-  box-shadow: 0 0 2px black; }
+  box-shadow: 0 0 1px black; }
   .contenedorProd .prod:hover {
-    scale: 1.02;
+    scale: 1.005;
     background: white;
-    box-shadow: 0 1px 5px black;  }
+    box-shadow: 1px 1px 4px #7d7d7d5f;  }
 
 .contenedorProd .prod .prodImg {
   width: 90%;
@@ -206,3 +217,14 @@
     font-size: 1.8rem;
     width: 40%;
     color: #000000; }
+
+  .itemCarrito {
+      display: flex;
+      border-bottom: solid 1px #5a5a5a;
+      max-width: 400px;
+      margin: 1rem, auto;
+    }
+  .itemCarrito img {
+    width: 200px;
+    margin-right: 1rem;
+  }
