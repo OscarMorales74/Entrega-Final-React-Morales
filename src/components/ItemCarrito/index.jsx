@@ -7,8 +7,8 @@ const ItemCarrito = ({ producto }) => {
 
     return (
         <div className="itemCarrito">
-            <img src={producto.image} alt={producto.title} />
-            <div>
+            <img src={producto.imagen} alt={producto.title} />
+            <div className="textosItemCarrito" >
                 <p>Titulo: {producto.title}</p>
                 <p>Cantidad: {producto.quantity}</p>
                 <p>Precio Un.: {producto.precio}</p>
