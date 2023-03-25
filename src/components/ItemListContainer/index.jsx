@@ -23,7 +23,7 @@ const ItemListContainer = ({ texto }) => {
   useEffect(() => {
     const querybd = getFirestore();
       const queryCollection = collection(querybd, 'items' );
-      
+    
       if (categoriaId) {
         const queryFilter = query(queryCollection, where('category', '==', categoriaId))
         getDocs(queryFilter).then((snapshotList) => {
@@ -50,12 +50,13 @@ const ItemListContainer = ({ texto }) => {
   
   return (
     //initial es valor inicial en el contador
-    <>
-        <div className='contenedorProd'>
-          <Title greeting={texto}/>
-          <ItemList lista={list} />
-        </div>
-      </>
+    <div className="contenedor">
+      <h1 className="tituloCategoria">{categoriaId}</h1>
+      <div className='contenedorProd'>
+        <Title greeting={texto}/>
+        <ItemList lista={list} />
+      </div>
+    </div>
   );
 }
 

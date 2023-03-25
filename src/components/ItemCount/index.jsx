@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../../app.css'
 
 //SE USA USEEFFECT PARA CADA VAZ QUE CAMBIE EL VALOR INITIAL EL CONTADOR SE RESETEE Y NA HAYA QUE ACTUALIZARLO
@@ -24,6 +25,10 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
             <button className='btnPlusminusCarrito' disabled={count >= stock} onClick={increase}>+</button>
             <div>
                 <button className='agregarAlCarrito' disabled={stock <= 0} onClick={() => onAdd(count)}>Agregar al carrito</button>
+            </div>
+            <div>
+            <button className="volveraProductos">
+            <Link to='/'>Volver a Productos</Link></button>
             </div>
         </div>
     );

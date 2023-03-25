@@ -29,9 +29,12 @@ export const ItemDetail = ({ lista }) => {
                     <p className="descrDetalle"> {lista.descrdetallada}</p>
                     {
                         goToCart ?
-                        <button className="btnTerminarCompra"><Link to='/cart'>Terminar Compra</Link> </button>:
+                        <div>
+                        <button className="btnTerminarCompra"><Link to='/cart'>Ver tu Carrito</Link> </button>
+                        <button className="seguirComprando"><Link to='/'>Seguir comprando</Link></button>
+                        </div>:
                         <ItemCount initial={1} stock={5} onAdd={onAdd} />
-                    }
+                    }                    
                 </div>
         </div>
     );

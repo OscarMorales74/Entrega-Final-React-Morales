@@ -23,20 +23,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 3rem;
   margin-right: 2rem;
   border: solid 1px #cacaca;
   border-radius: 5px; }  
 .icoCarrito {
   height: 30px;
+  scale: 1.5;
   line-height: 30px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  margin-left: 1rem;}
+  margin-left: 1rem;
+  color: #000;
+}
 .contadorCarrito {
   display: flex;
   font-size: 1.4rem;
-  line-height: 30px;
-  margin-right: 1rem;}
+  line-height: 40px;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
 .nav_list {/* prop el nav */
   display: flex;
   flex-direction: row;
@@ -45,7 +52,7 @@
   width: 100%;
   height: 80%;
   right: 2%;
-  top: 0;        
+  top: 0;
   padding-top: 0;
   text-align: center;
   justify-content: flex-end;
@@ -59,6 +66,15 @@
 .nav_link {
   margin: 0 0.4rem;
   text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+  transition: 0.3s;
+}
+.nav_link:hover {
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 17px rgb(250, 250, 250);
 }
 
 /* ESTILOS DEL DETALLE DE PRODUCTOS */
@@ -73,7 +89,9 @@
   padding: 1rem;
   border: solid 2px #403e3ed6;
   border-radius: 10px;
-  background-color: #e5ded54a; }
+  background-color: #e5ded54a;
+  text-decoration: none;
+}
 .containerProd .detalleImg {
   position: absolute;
   top: 1rem;
@@ -97,56 +115,116 @@
   display: block;
   top: 5rem;
   font-size: 2rem;
-  height: 70%;
-  max-height: 50%;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
   overflow-wrap: break-word; }
 .counter {
+  display: flex;
+  flex-direction: row;
   position: relative;
-  top: 5%;
-  left: 20%; }
-.btnPlusminusCarrito {
-  position: relative;
-  top: 7rem;
+  top: 8rem;
   left: 1rem;
-  width: 30px;
-  height: 30px;
+  align-items: center;
+}
+.counter .btnPlusminusCarrito {
+  position: relative;
+  left: 1rem;
+  width: 35px;
+  height: 35px;
   font-size: 2rem;
   border: none;
   border-radius: 5px;
-  background-color: #2eed08; }
+  color: #fff;
+  background-color: #069ff8;
+  cursor: pointer;
+}
 .cantAagregar {
   position: relative;
-  top: 7rem;
   left: 1rem;
   font-size: 2rem;
-  margin: 2rem;
+  margin: 0 1rem;
   font-weight: bold; }
 .agregarAlCarrito {
   position: relative;
-  top: 9rem;
-  left: -1rem;
+  left: 3rem;
   font-size: 1.5rem;
   padding: 1rem;
   border: none;
-  border-radius: 5px;
-  background-color: #2eed08; }
+  color: #ffffff;
+  background-color: #069ff8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.agregarAlCarrito:hover {
+  color: #000;
+  background-color: #b2f30e;
+}
+.volveraProductos {
+  text-decoration: none;
+  position: relative;
+  left: 10rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  color: #ffffff;
+  background-color: #069ff8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.volveraProductos:hover {
+  color: #000;
+  background-color: #b2f30e;
+}
 .btnTerminarCompra {
   position: relative;
-  top: 9rem;
-  left: 0;
+  top: 8rem;
+  left: 5rem;
   justify-content: center;
   font-size: 1.5rem;
   text-decoration: none;
   padding: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #2eed08; }
+  color: #fff;
+  background-color: #069ff8;
+  transition: 0.3s;
+}
+.btnTerminarCompra:hover {
+  color: #000;
+  background-color: #b2f30e;
+}
+.seguirComprando {
+  text-decoration: none;
+  position: relative;
+  top: 8rem;
+  left: 20rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  color: #ffffff;
+  background-color: #069ff8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.seguirComprando:hover {
+  color: #000;
+  background-color: #b2f30e;
+}
 
 /* ESTILOS DE CONTENEDOR DE PRODUCTOS EN ITEMLISTCONTAINER */
 /* DE LA CARD (PROD) EN ITEM*/
 /* DE LA IMAGEN DENTRO DA LA CARD (PRODIMG)EN ITEM */
 /* DE LOS TEXTOS DENTRO DEL PRODUCTO */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+}
+.tituloCategoria {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
 .contenedorProd {
   display: flex;
   flex-wrap: wrap;
@@ -265,16 +343,55 @@
   border-radius: 10px;
   background-color: #e9e9e9;
 }
-  .itemCarrito img {
+.itemCarrito img {
+  position: relative;
+  left: 7rem;
+  height: 120px;
+  width: 120px;    
+  object-fit: cover;
+  margin-right: 1rem;
+  border: solid 1px #969696;
+}
+.itemCarrito .textosItemCarrito {
+  position: relative;
+  left: 15rem;    
+}
+.precioTotalenCarrito {
+  position: relative;
+  font-size: 2rem;
+  top: 5rem;
+}
+.comprar {
+    text-decoration: none;
     position: relative;
-    left: 7rem;
-    height: 120px;
-    width: 120px;    
-    object-fit: cover;
-    margin-right: 1rem;
-    border: solid 1px #969696;
+    top: 2rem;
+    left: -20rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    color: #ffffff;
+    background-color: #069ff8;
+    cursor: pointer;
+    transition: 0.3s;
   }
-  .itemCarrito .textosItemCarrito {
-    position: relative;
-    left: 15rem;    
+  .comprar:hover {
+    color: #000;
+    background-color: #b2f30e;
   }
+.seguirComprandoenCarrito {
+  text-decoration: none;
+  position: relative;
+  top: -2rem;
+  left: 20rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  color: #ffffff;
+  background-color: #069ff8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.seguirComprandoenCarrito:hover {
+  color: #000;
+  background-color: #b2f30e;
+}
