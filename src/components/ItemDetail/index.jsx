@@ -27,11 +27,12 @@ export const ItemDetail = ({ lista }) => {
                 <div className="content">
                     <h1 className="tituloDetalle">{lista.title}</h1>
                     <p className="descrDetalle"> {lista.descrdetallada}</p>
+                    <h2 className="precioenDetalleProd">$ {lista.precio}</h2>
                     {
                         goToCart ?
                         <div>
-                        <button className="btnTerminarCompra"><Link to='/cart'>Ver tu Carrito</Link> </button>
-                        <button className="seguirComprando"><Link to='/'>Seguir comprando</Link></button>
+                        <Link className="btnTerminarCompra" to='/cart'>Ver tu Carrito</Link>
+                        <Link className="seguirComprando" to='/'>Seguir comprando</Link>
                         </div>:
                         <ItemCount initial={1} stock={5} onAdd={onAdd} />
                     }                    

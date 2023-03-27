@@ -1,3 +1,58 @@
+
+# PROYECTO E-COMERCE 
+
+Este proyecto esta pensado para una startup de impresión 3d.
+Contiene productos impresos con este sistema.
+
+## Contenido para el usuario:
+
+- pagina de inicio que contiene las totalidad de productos
+- dos paginas de listado de productos filtrados por categorias
+- pagina de detalle de productos
+- pagina de contenido de carrito de compras 
+- pagina de formulario de contacto para checkout de compra 
+
+## Listado de Componentes:
+
+| Componente          | Descripcion                                                                |
+|---------------------|----------------------------------------------------------------------------|
+| App                 | Contiene las rutas y renderiza todas las paginas del sitio                 |
+| ItemListContainer   | Hace la peticion a Firestore y maneja la logica para filtrar productos     |
+| ItemList            | Recibe la lista de productos y los muestra usando "Item"                   |
+| Item                | Contiene los elementos dentro de la card del producto y lleva a ItemDetail |
+| Navbar              | Contiene todos los elementos de la barra superior y sus enlaces            |
+| Item                | Contiene los elementos dentro de la card del producto y lleva a ItemDetail |
+| ItemDetailContainer | Contiene la logica para mostrar un producto determinado                    |
+| ItemDetail          | Renderiza el detalle del producto                                          |
+| ItemCount           | Renderiza un contador dentro de ItemDetail                                 |
+| CartContext         | Define el contexto, el provider y la logica del carrito                    |
+| IconoCarrito        | Renderiza el iciono del carrito en el navbar                               |
+| Cart                | Renderiza el carrito de compras                                            |
+| ItemCarrito         | Contiene lo elementos que componen a cada item del carrito                 |
+| ContactForm         | Renderiza un formulario para confirmar compra                              | 
+
+## Funcionalidades
+
+Inicio ("/")muestra la lista general de productos
+
+En navbar, "Hogar" y "Figuras" llevan a esas categorias de productos ("/hogar y /figuras")
+
+En navbar, el Icono del Carrito lleva al listado de productos en el carrito ("/cart")
+
+Al hacer click en un producto de la lista, se renderiza el detalle del producto con 4 botones: uno para volver al listado general y seguir comprando, un par para elegir el numero de productos a agregar al carrito, y el ultimo para agregar el producto al carrito.
+
+Al hacer click en "Agregar al carrito" se monta el boton "Ver tu carrito" si el usuario quiere finalizar la compra. Se desmonta el boton "Agregar al carrito".En las dos alternativas se mantiene la opcion de volver al listado con el boton "Seguir comprando".
+
+Al hacer click en "Ver tu carrito" se renderiza el listado de productos agregados al carrito, con una imagen, titulo, cantidad, precio unitario y precio subtotal por producto. Ademas muestra el precio total y 3 botones. uno para seguir comprando, otro para confirmar la compra y el ultimo para limpiar el carrito
+
+En "/cart", al hacer click en "Limpiar carrito", este se resetea y queda vacio. El contador superior tambien se recetea a cero.
+
+En "/cart", al hacer click en "Confirmar compra", se renderiza un formulario ("/contactForm")
+
+El formulario de "/contactForm", requiere ser llenado por el usuario para confirmar la compra. Una vez llenado, al hacer click en el boton "Enviar" se confirma la compra, ademas de devolver el id de la orden y el valor total de la compra.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +123,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

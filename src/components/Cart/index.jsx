@@ -2,29 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCarrito from "../ItemCarrito";
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 
 const Cart = () => {
-    const { cart, totalPrecio } = useCartContext();
-
-    const order = {
-        buyer: {
-            name: 'Juan',
-            email: 'juanpere@gmail.com',
-            phone: '123456789',
-            address: 'calle cualquiera 1234'
-        },
-        items: cart.map(producto => ({ id: producto.id, title: producto.title, precio: producto.precio, quantity: producto.quantity })),
-        total: totalPrecio(),
-    }
-
-    const handleClick = ({ id }) => {
-        const db = getFirestore();
-        const orderCollection = collection(db, 'orders');
-        addDoc(orderCollection, order)
-        .then({ id })
-    }
+    const { cart, totalPrecio, limpiarCarrito } = useCartContext();
 
     if (cart.length === 0) {
         return (
@@ -43,8 +24,11 @@ const Cart = () => {
             <p className="precioTotalenCarrito">
                 total: $ {totalPrecio()}
             </p>
-            <button className="comprar" onClick={handleClick}><Link to='/contactForm'>Confirmar Compra</Link></button>
-            <button className="seguirComprandoenCarrito"><Link to='/'>Seguir comprando</Link></button>
+            <div>
+                <Link className="seguirComprandoenCarrito" to='/'>Seguir comprando</Link>
+                <Link className="comprar" to='/contactForm'>Confirmar Compra</Link>
+                <button className="limpiarCarrito" onClick={limpiarCarrito}>Limpiar carrito</button>
+            </div>
         </div>
     )
 }
