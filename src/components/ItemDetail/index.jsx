@@ -31,7 +31,7 @@ export const ItemDetail = ({ lista }) => {
                     {
                         goToCart ?
                         <div>
-                        <Link className="btnTerminarCompra" to='/cart'>Ver tu Carrito</Link>
+                        <Link className="VerTuCarrito" to='/cart'>Ver tu Carrito</Link>
                         <Link className="seguirComprando" to='/'>Seguir comprando</Link>
                         </div>:
                         <ItemCount initial={1} stock={5} onAdd={onAdd} />
